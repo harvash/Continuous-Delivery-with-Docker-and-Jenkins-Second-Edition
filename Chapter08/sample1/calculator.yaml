@@ -16,10 +16,17 @@ spec:
     spec:
       containers:
       - name: calculator
-        image: leszko/calculator:{{VERSION}}
+        image: harvash/hello-kaniko:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
 
 ---
 
